@@ -44,3 +44,21 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Feature Testing
+
+The following checklist is used to verify that the main features of the application work as expected.
+
+### Product Catalog
+- [ ] Verify that products and their images display correctly.
+- [ ] Confirm that product information loads properly.
+
+### Checkout and Payment
+- [ ] Verify that the payment page loads correctly.
+- [ ] Confirm that all four checkout steps (Signin, Shipping, Payment, Place Order) are displayed.
+- [ ] Verify that the appropriate checkout steps are highlighted.
+- [ ] Test the payment submission button and confirm that the "Payment processing..." alert appears.
+
+### Navigation
+- [ ] Verify that users can navigate between the main pages.
+- [ ] Confirm that navigation links direct users to the correct pages.
