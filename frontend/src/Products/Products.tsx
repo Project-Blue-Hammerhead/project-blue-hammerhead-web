@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
 type Product = {
     id: number;
     name: string;
@@ -9,26 +10,30 @@ type Product = {
     rating: number;
     numberOfReviews: number;
     imageUrl: string;
-}
+};
+
 const emptyProducts: Product[] = [];
+
 function Products() {
-    const [products, setProducts]: [Product[], (products: Product[]) => void]
-    = useState(emptyProducts);
+    const [products, setProducts]: [Product[], (products: Product[]) => void] =
+        useState(emptyProducts);
+
     useEffect(() => {
-        axios.get<Product[]>("https://localhost:7071/catalog",
-            {
+        axios
+            .get<Product[]>("http://localhost:5015/catalog", {
                 headers: {
                     "Content-Type": "application/json",
                 },
             })
             .then((response) => setProducts(response.data))
             .catch((error) => console.log(error));
-        }, []);
-     return (
+    }, []);
+
+    return (
         <div className="content">
             <ul className="products">
                 {products.map((product) => (
-                    <li>
+                    <li key={product.id}>
                         <div className="product">
                             <img
                                 className="product-image"
@@ -45,7 +50,7 @@ function Products() {
                             </div>
                         </div>
                     </li>
-        ))}  
+                ))}
             </ul>
         </div>
     );
